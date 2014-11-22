@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="AntTest" default="run" basedir=".">
+	<property name="src.dir" location="src" />
+	<property name="bin.dir" location="bin" />
+
+	<target name="compile">
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" />
+		<jar destfile="bin/test.jar" basedir="${bin.dir}">
+			<manifest>
+				<attribute name="Main" value="us.awpwo.Main" />
+			</manifest>
+		</jar>
+		<java jar="dist/test.jar" fork="true" />
+	</target>
+	
+	<target name="run" depends="compile">
+        <java jar="bin/test.jar" fork="true"/>
+    </target>
+
+</project>
+
+
+
+    
