@@ -5,20 +5,19 @@
 
 	<target name="compile">
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" />
-		<jar destfile="bin/test.jar" basedir="${bin.dir}">
+		<jar destfile="dist/test.jar" basedir="${bin.dir}">
 			<manifest>
-				<attribute name="Main" value="us.awpwo.Main" />
+				<attribute name="Main-Class" value="us.awpwo.Main" />
 			</manifest>
+			<zipgroupfileset dir="lib"/>
 		</jar>
+	</target>
+
+	<target name="run" depends="compile">
 		<java jar="dist/test.jar" fork="true" />
 	</target>
-	
-	<target name="run" depends="compile">
-        <java jar="bin/test.jar" fork="true"/>
-    </target>
 
 </project>
 
 
 
-    
