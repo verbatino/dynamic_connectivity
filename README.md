@@ -1,4 +1,2 @@
-dynamic_connectivity
-====================
-# Struktura zbiorów roz³¹cznych
-**Struktura danych dla zbiorów roz³¹cznych** pozwala zarz¹dzaæ tak¹ rodzin¹ dynamicznych (tzn. zmieniaj¹cych siê w czasie) zbiorów roz³¹cznych.
+# Struktura zbiorÃ³w rozÅ‚Ä…cznych
+**Struktura danych dla zbiorÃ³w rozÅ‚Ä…cznych** pozwala zarzÄ…dzaÄ‡ takÄ… rodzinÄ… dynamicznych (tzn. zmieniajÄ…cych siÄ™ w czasie) zbiorÃ³w rozÅ‚Ä…cznych.
