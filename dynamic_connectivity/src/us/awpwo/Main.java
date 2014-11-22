@@ -9,7 +9,7 @@ import org.kohsuke.args4j.Option;
 public class Main {
 
 	@Option(name = "--filename")
-    private String filename = "test.dat";
+    private String filename = "/data/test.dat";
 	
 	public static void main(String[] args) {
 		try {
@@ -25,7 +25,7 @@ public class Main {
 		CmdLineParser parser = new CmdLineParser(this);
         parser.setUsageWidth(80);
         parser.parseArgument(args);
-        File file = new File(System.getProperty("user.dir") + "/data/" + filename);
+        File file = new File(System.getProperty("user.dir") + filename);
         Scanner scanner = new Scanner(file);
         int N = scanner.nextInt(), i, p, q;
 		UF uf = new UF(N);
