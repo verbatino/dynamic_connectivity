@@ -1,0 +1,30 @@
+<project name="DynamicConnectivity" default="compile" basedir=".">
+
+  <target name="clean">
+    <delete dir="bin" />
+    <delete dir="dist" />
+  </target>
+
+  <target name="init">
+    <mkdir dir="bin" />
+    <mkdir dir="dist" />
+  </target>
+ 
+  <target name="compile" depends="clean, init">
+    <path id="project.classpath">
+      <fileset dir="lib" includes="*.jar" />
+           <pathelement location="src"/>
+      </path>
+    <javac srcdir="src" destdir="bin" includeantruntime="true" classpathref="project.classpath" />
+    <jar destfile="dist/test.jar" basedir="bin">
+      <manifest>
+        <attribute name="Main-Class" value="us.awpwo.Main"/>
+      </manifest>
+      <zipgroupfileset dir="lib" />
+    </jar>
+    <java jar="dist/test.jar" fork="true">
+        <arg line="--filename=../data/test.dat" />
+    </java>
+  </target>
+  
+</project>
